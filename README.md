@@ -1,0 +1,2 @@
+# CoreWord
+CoreWord
