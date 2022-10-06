@@ -230,7 +230,6 @@ class _KoKeyword:
         for prev_token, center_token, next_token in self.split_piece_list[word]:
           side_n = 0 # 양옆에 존재하는 토큰 개수 (0, 1, 2)
           if not prev_token:
-            side_n += 1
             left_rank = 0
           else:
             side_n += 1
@@ -238,6 +237,7 @@ class _KoKeyword:
           if not next_token:
             right_rank = 0
           else:
+            side_n += 1
             right_rank = self.rank[self.token_to_idx[next_token]]
           # 주변에 토큰이 없으면 left_rank, right_rank 모두 0
           # 0으로 나누지 않게 처리
